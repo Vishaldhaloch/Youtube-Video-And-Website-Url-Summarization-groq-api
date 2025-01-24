@@ -56,3 +56,51 @@ This application uses **Streamlit** as the user interface and **Groq's ChatGroq 
    ```bash
    git clone <repository_url>
    cd <repository_folder>
+
+   
+2. **Create a Conda Environment:**
+    ```bash
+  conda create -n summarize-content python=3.8 -y
+   
+3. **Activate the Environment:**
+    ```bash
+    conda activate summarize-content
+  
+4. **Install Dependencies:**
+   Install the required libraries using requirements.txt:
+    ```bash 
+    pip install -r requirements.txt
+   
+5. **Set Up Environment Variables:**
+   Create a .env file and add your Groq API Key:
+    ```bash
+    GROQ_API_KEY=your_groq_api_key
+
+  
+1. **How to Run**
+   Start the task execution by running the following Python script:
+     ```bash
+     streamlit run app.py
+   
+2. **Use the Application:**
+    - Open the Streamlit app in your browser.
+    -  In the sidebar, enter your Groq API Key.
+    -  Paste the URL of the YouTube video or website you want to summarize.
+    -   Click the "Summarize the Content from YT or Website" button to generate a summary of the content.
+
+3. **View the Results:**
+    - The application will display the summarized text based on the content of the URL provided.
+   
+**Code Overview**
+ **Groq API Integration:**
+   - The ChatGroq class is used to interface with the Groq model (Gemma-7b-It), which is responsible for generating summaries of the content.
+
+**Content Loading:**
+**YouTube:** 
+ - If the URL is a YouTube video, the YoutubeLoader extracts the video transcript and metadata.
+**Website:**
+ -  If the URL is a website, the UnstructuredURLLoader extracts the text content from the webpage.
+**Prompt Template:**
+ - The prompt template instructs the model to provide a summary of the content in 300 words. The extracted text is fed into this prompt to generate the summary.
+**Summarization Chain**
+ - The LangChain summarization chain takes the loaded content and uses the Groq LLM model to summarize it based on the prompt.
