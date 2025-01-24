@@ -96,10 +96,11 @@ This application uses **Streamlit** as the user interface and **Groq's ChatGroq 
    - The ChatGroq class is used to interface with the Groq model (Gemma-7b-It), which is responsible for generating summaries of the content.
 
 2. **Content Loading:**
-    **YouTube:** 
-     - If the URL is a YouTube video, the YoutubeLoader extracts the video transcript and metadata.
-    **Website:**
-      - If the URL is a website, the UnstructuredURLLoader extracts the text content from the webpage.
+    . YouTube:
+       - If the URL is a YouTube video, the YoutubeLoader extracts the video transcript and metadata.
+       
+    . Website:
+       - If the URL is a website, the UnstructuredURLLoader extracts the text content from the webpage.
 3. **Prompt Template:**
      - The prompt template instructs the model to provide a summary of the content in 300 words. The extracted text is fed into this prompt to generate the summary.
 4. **Summarization Chain**
