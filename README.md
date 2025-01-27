@@ -60,7 +60,7 @@ This application uses **Streamlit** as the user interface and **Groq's ChatGroq 
    
 2. **Create a Conda Environment:**
     ```bash
-  conda create -n summarize-content python=3.8 -y
+    conda create -n summarize-content python=3.8 -y
    
 3. **Activate the Environment:**
     ```bash
